@@ -12,7 +12,7 @@
 
 BASE_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 DICOM_TK_GIT="https://github.com/DCMTK/dcmtk.git"
-DICOM_TK_URL="ftp://dicom.offis.de/pub/dicom/offis/software/dcmtk/dcmtk365/"
+DICOM_TK_URL="https://dicom.offis.de/download/dcmtk/dcmtk365/"
 DICOM_TK_ARC="dcmtk-3.6.5.tar.gz"
 DICOM_FOLDER="dcmtk"
 
