@@ -28,18 +28,19 @@ To install required packages execute:
 ```
 sudo apt install afl++ build-essential cmake wget libgtest-dev libgmock-dev
 ```
-
-Download dependencies into the `medfuzz/include` subdirectory:
+Clone the medfuzz repository and run `cd medfuzz`. Download dependencies into the `medfuzz/include` subdirectory:
 
 ```
 cd include
 # Download CLI 1.8.0 (or newer)
 wget https://github.com/CLIUtils/CLI11/releases/download/v1.8.0/CLI11.hpp
-# Download googletest 1.10
-wget -q -O - https://github.com/google/googletest/archive/refs/tags/release-1.10.0.tar.gz | tar -xvz --one-top-level=googletest --strip-components=1 && cd googletest && cmake . && make -j$(nproc)
+# Download googletest
+git clone https://github.com/google/googletest.git -b v1.15.2 && cd googletest && cmake .
+make
+make install
  ```
 
-To build medfuzz execute:
+To build medfuzz change back to the medfuzz directory and execute:
 ```
 make && make preload
 ```
